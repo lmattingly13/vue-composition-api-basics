@@ -28,13 +28,20 @@
 </template>
 
 <script setup>
-import {reactive, computed} from 'vue'
+import {reactive, computed, watch} from 'vue'
 
 const appTitle = 'My Ok Counter App'
 
 const counterData = reactive({
   count: 0,
   title: 'My Counter'
+})
+
+watch(()=> counterData.count, (newCount)=> {
+  if(newCount ===20){
+    alert('Way to go! you made it to 20')
+  }
+  console.log('newCount', newCount)
 })
 
 const oddOrEvent = computed(() =>{
@@ -48,7 +55,6 @@ const increaseCounter = (amount, e) =>{
 const decreaseCounter = amount=>{
   counterData.count -=amount
 }
-
 
 </script>
 
