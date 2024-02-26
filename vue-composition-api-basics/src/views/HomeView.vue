@@ -28,57 +28,49 @@
 </template>
 
 <script setup>
-import {reactive, computed, watch, onBeforeMount, onMounted, onBeforeUnmount, onUnmounted, onActivated, onDeactivated} from 'vue'
+import {reactive, computed, watch, onMounted} from 'vue'
 
-const appTitle = 'My Ok Counter App'
+/*
+  App title
+*/
+  const appTitle = 'My Ok Counter App'
 
-const counterData = reactive({
-  count: 0,
-  title: 'My Counter'
-})
+  onMounted(()=>{
+    console.log('do something related to title,  on mounted')
+  })
 
-watch(()=> counterData.count, (newCount)=> {
-  if(newCount ===20){
-    alert('Way to go! you made it to 20')
+
+/*
+  Counter
+*/
+  const counterData = reactive({
+    count: 0,
+    title: 'My Counter'
+  })
+
+  watch(()=> counterData.count, (newCount)=> {
+    if(newCount ===20){
+      alert('Way to go! you made it to 20')
+    }
+    console.log('newCount', newCount)
+  })
+
+  const oddOrEvent = computed(() =>{
+    if (counterData.count %2 ===0) return 'even'
+    return 'odd'
+  })
+      
+  const increaseCounter = (amount, e) =>{
+    counterData.count += amount
   }
-  console.log('newCount', newCount)
-})
+  const decreaseCounter = amount=>{
+    counterData.count -=amount
+  }
 
-const oddOrEvent = computed(() =>{
-  if (counterData.count %2 ===0) return 'even'
-  return 'odd'
-})
-    
-const increaseCounter = (amount, e) =>{
-  counterData.count += amount
-}
-const decreaseCounter = amount=>{
-  counterData.count -=amount
-}
+  onMounted(()=>{
+    console.log('do something related to decreaseCounter,  on mounted')
+  })
 
-onBeforeMount(()=>{
-  console.log('onBeforeMount')
-})
-
-onMounted(()=>{
-  console.log('onMounted')
-})
-
-onBeforeUnmount(()=>{
-  console.log('onBeforeUnmount')
-})
-
-onUnmounted(()=>{
-  console.log('onUnmounted')
-})
-
-onActivated(()=>{
-  console.log('onActivated')
-})
-
-onDeactivated(()=>{
-  console.log('onDeactivated')
-})
 
 </script>
 
