@@ -1,11 +1,13 @@
 <template>
-    <teleport to=".modal-container">
-        <div class="modal">
-        <h1><slot name="title"></slot></h1>
-        <slot />
-        <button>Hide Modal</button>
-    </div>
-    </teleport>
+      <teleport to=".modals-container">
+        <div
+          class="modal"
+        >
+          <h1>This is a modal</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa laboriosam vero natus ut rerum quaerat, saepe praesentium tempore et hic velit odio nemo minus labore quam ullam quod architecto?</p>
+          <button >Hide modal</button>
+        </div>
+      </teleport>
 </template>
 
 
