@@ -3,7 +3,7 @@
         <div
           class="modal"
         >
-          <h1><slot name="title"/></h1>
+          <h1>{{ title }}</h1>
           <slot/>
           <button >Hide modal</button>
         </div>
@@ -11,10 +11,32 @@
 </template>
 
 <script setup>
+/*
+  props
+*/
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'No title specified'
+  }
+})
 
 </script>
 
+<!--
+<script>
+export default{
+    props:{
+        title:{
+            type:String,
+            default: 'No title specified'
+        }
+    }
+}
+</script>
+-->
 <style>
+
 .modal{
     background:beige;
     padding:10px;
