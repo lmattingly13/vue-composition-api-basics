@@ -4,12 +4,15 @@
           class="modal"
         >
           <h1><slot name="title"/></h1>
-          <slot>  </slot>
+          <slot/>
           <button >Hide modal</button>
         </div>
       </teleport>
 </template>
 
+<script setup>
+
+</script>
 
 <style>
 .modal{
