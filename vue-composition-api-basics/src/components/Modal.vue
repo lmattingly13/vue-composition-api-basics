@@ -3,8 +3,8 @@
         <div
           class="modal"
         >
-          <h1>This is a modal</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa laboriosam vero natus ut rerum quaerat, saepe praesentium tempore et hic velit odio nemo minus labore quam ullam quod architecto?</p>
+          <h1><slot name="title"/></h1>
+          <slot>  </slot>
           <button >Hide modal</button>
         </div>
       </teleport>
