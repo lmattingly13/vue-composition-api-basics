@@ -2,7 +2,7 @@
       <teleport to=".modals-container">
         <div
           v-if="modelValue"
-          class="modal"
+          class="modal-dark"
         >
           <h1>{{ title }}</h1>
           <slot/>
@@ -31,14 +31,34 @@ const props = defineProps({
 */
 const emits = defineEmits(['update:modelValue'])
 
-
+/*
+  handleButtonClick 
+*/
+/*
+const handleButtonClick = () => {
+  emits('update:modelValue', false)
+}
+*/
 </script>
 
+<!--
+<script>
+export default{
+    emits:['hideModal']
+    props:{
+        title:{
+            type:String,
+            default: 'No title specified'
+        }
+    }
+}
+</script>
+-->
 <style>
 
-.modal{
-    background:beige;
-    color:black;
+.modal-dark{
+    background:#333;
+    color:white;
     padding:10px;
     position:absolute;
     left: 0;
